@@ -26,7 +26,7 @@
       <section class="row justify-content-center">
         <article class="col-md-6">
           <h1 class="text-primary my-3 text-center">Form essere umani</h1>
-          <form action="">
+          <form id="form-umani">
             <div class="d-flex flex-column align-items-center my-2">
               <label for="firstName" class="form-label text-white">Nome</label>
               <input
@@ -34,6 +34,7 @@
                 class="d-block w-100 rounded-2 border border-1 border-white bg-secondary text-white"
                 id="firstName"
                 placeholder="Giangiorgio"
+                required
               />
             </div>
             <div class="d-flex flex-column align-items-center my-2">
@@ -45,6 +46,7 @@
                 class="d-block w-100 rounded-2 border border-1 border-white bg-secondary text-white"
                 id="lastName"
                 placeholder="Verdi"
+                required
               />
             </div>
             <div class="d-flex flex-column align-items-center my-2">
@@ -54,6 +56,7 @@
                 class="d-block w-100 rounded-2 border border-1 border-white bg-secondary text-white"
                 id="age"
                 placeholder="42"
+                required
               />
             </div>
             <div class="d-flex flex-column align-items-center my-2">
@@ -65,56 +68,72 @@
                 class="d-block w-100 rounded-2 border border-1 border-white bg-secondary text-white"
                 id="location"
                 placeholder="Roma"
+                required
               />
+            </div>
+            <div class="text-center mt-3">
+              <button class="btn btn-success w-50" type="submit">INVIA</button>
             </div>
           </form>
         </article>
       </section>
       <section class="row justify-content-center">
         <article class="col-md-6">
-          <h1 class="text-primary my-3 text-center">Form essere umani</h1>
-          <form action="">
+          <h1 class="text-primary my-3 text-center">Form animali</h1>
+          <form id="form-pet">
             <div class="d-flex flex-column align-items-center my-2">
-              <label for="firstName" class="form-label text-white">Nome</label>
+              <label for="petName" class="form-label text-white"
+                >Nome animale</label
+              >
               <input
                 type="text"
                 class="d-block w-100 rounded-2 border border-1 border-white bg-secondary text-white"
-                id="firstName"
+                id="petName"
+                placeholder="Cupcake"
+                required
+              />
+            </div>
+            <div class="d-flex flex-column align-items-center my-2">
+              <label for="ownerName" class="form-label text-white"
+                >Nome padrone</label
+              >
+              <input
+                type="text"
+                class="d-block w-100 rounded-2 border border-1 border-white bg-secondary text-white"
+                id="ownerName"
                 placeholder="Giangiorgio"
+                required
               />
             </div>
             <div class="d-flex flex-column align-items-center my-2">
-              <label for="lastName" class="form-label text-white"
-                >Congnome</label
-              >
+              <label for="species" class="form-label text-white">Specie</label>
               <input
                 type="text"
                 class="d-block w-100 rounded-2 border border-1 border-white bg-secondary text-white"
-                id="lastName"
-                placeholder="Verdi"
-              />
-            </div>
-            <div class="d-flex flex-column align-items-center my-2">
-              <label for="age" class="form-label text-white">Età</label>
-              <input
-                type="text"
-                class="d-block w-100 rounded-2 border border-1 border-white bg-secondary text-white"
-                id="age"
+                id="species"
                 placeholder="42"
+                required
               />
             </div>
             <div class="d-flex flex-column align-items-center my-2">
-              <label for="Location" class="form-label text-white"
-                >Località</label
-              >
+              <label for="breed" class="form-label text-white">Razza</label>
               <input
                 type="text"
                 class="d-block w-100 rounded-2 border border-1 border-white bg-secondary text-white"
                 id="location"
                 placeholder="Roma"
+                required
               />
             </div>
+            <div class="text-center mt-3">
+              <button class="btn btn-success w-50" type="submit">
+                INVIA PET
+              </button>
+            </div>
           </form>
+          <article>
+            <ul id="pet-list" class="list-group mt-5"></ul>
+          </article>
         </article>
       </section>
     </main>
