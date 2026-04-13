@@ -66,7 +66,7 @@ const speciesInput = document.getElementById("species");
 const breedInput = document.getElementById("breed");
 
 const pets = [];
-const petList = document.getElementById("per-list");
+const petList = document.getElementById("pet-list");
 
 const petForm = document.getElementById("form-pet");
 petForm.addEventListener("submit", function (e) {
@@ -79,11 +79,26 @@ petForm.addEventListener("submit", function (e) {
     breedInput.value,
   );
 
+  pets.forEach((p) => {
+    if (newpet.sameOwner(p))
+      console.log(`${newpet.petName} ha lo stesso padrone di ${p.petName}`);
+  });
+
   pets.push(newpet);
 
   console.log("creato", newpet);
 
-  renderList();
+  creaList();
 
   petForm.reset();
 });
+
+function creaList() {
+  petList.innerHTML = "";
+  pets.forEach((p) => {
+    const li = document.createElement("li");
+    li.classList.add("list-group-item", "bg-secondary", "text-white");
+    li.innerHTML = `Nome animale: ${p.petName} - Nome padrone: ${p.ownerName} - Specie: ${p.species} - Razza: ${p.breed}`;
+    petList.appendChild(li);
+  });
+}
